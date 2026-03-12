@@ -1,0 +1,9 @@
+[project]
+name = "cycle-counter"
+version = "0.1.0"
+description = "Simple recurring task reminder tool that sits on desktop."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "datetime>=6.0",
+]
