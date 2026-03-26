@@ -5,7 +5,7 @@ import datetime as dt
 #It also contains a start date, a duration, and a due date
 #Lastly, it has a boolean value showing if it is due or not
 class Task:
-    def __init__(self, name, duration = dt.timedelta(7), start = dt.datetime.now()):
+    def __init__(self, name, duration = dt.timedelta(7), start = dt.date.today()):
         self.name = name
         self.start = start
         self.cycle_duration = duration

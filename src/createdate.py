@@ -1,4 +1,5 @@
 import datetime as dt
+from confirmation import confirmation
 
 def create_date():
     #TODO create function to allow easy datetime creation
@@ -6,7 +7,7 @@ def create_date():
 
 def create_deltatime():
     print(f"Create complex or simple duration?")
-    choice = input("--> ")
+    choice = input("--> ").lower()
     match choice:
         case "simple" | "sim" | "s":
             print(f"Simple duration selected.")
