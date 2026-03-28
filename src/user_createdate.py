@@ -7,6 +7,7 @@ def create_date():
     pass
 
 def create_deltatime():
+    #TODO add functionality where if a user just enters a number it defaults to a simple duration with that number of days
     print(f"Create complex or simple duration?")
     choice = input("--> ").lower()
     match choice:
