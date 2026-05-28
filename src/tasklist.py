@@ -36,4 +36,24 @@ class TaskList:
             print(f"--> Frequency: {task.cycle_duration.days} days") #TODO figure out if I can do this better
             print(f"--> Next Due Date: {task.due}")
             print(f"--> Time til Due Date: {(task.due - dt.date.today()).days} days")
-            print("----------------------------------------")     
+            print("----------------------------------------")
+
+    def generate_file(self):
+        file_content = ''
+        for task in self.tasks:
+            file_content += task.name + ','
+            file_content += str(task.cycle_duration.days) + ','
+            file_content += str(task.start)
+            file_content += '['
+        return file_content.rstrip('[')
+
+    def generate_list_from_file(self, file_content):
+        text_tasks = file_content.split('[')
+        print(text_tasks)
+        for tt in text_tasks:
+            tt = tt.split(',')
+            name = tt[0]
+            duration = dt.timedelta(int(tt[1]))
+            start = dt.date.fromisoformat(tt[2])
+            task = Task(name, duration, start)
+            self.add_task(task)
